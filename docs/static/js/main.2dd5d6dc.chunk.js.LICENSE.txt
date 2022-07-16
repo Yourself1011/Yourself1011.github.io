@@ -1,0 +1,5 @@
+/**
+ * Daniel Zhang's devlopment portfolio
+ * @copyright 2022 Daniel Zhang
+ * @license BSD-3-Clause
+ */

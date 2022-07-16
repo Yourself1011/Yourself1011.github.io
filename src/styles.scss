@@ -1,0 +1,145 @@
+$bg: #2C3639;
+$titlebg: #9840db;
+$secondary: #3F4E4F;
+$tertiary: #A27B5C;
+$blue: #494ca6;
+$lightblue: #a7c0fa;
+$text: #DCD7C9;
+$waveheight: 30vh;
+$redlines: false;
+
+.App {
+  font-family: sans-serif;
+  background-color: $bg;
+}
+
+body {
+  background-color: $bg;
+}
+
+div {
+  background-color: $secondary;
+  border-radius: 10px;
+  color: $text;
+
+  @if $redlines {
+    outline: red solid 1px;
+  }
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 18pt;
+  margin: 0px;
+  padding: 10px;
+}
+
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 50pt;
+}
+
+#title {
+  position: fixed;
+  left: 5vw;
+  top: 25vh;
+  width: 300px;
+  padding: 30px;
+  h1 {
+    color: $lightblue;
+  }
+}
+
+#titlescreen {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: $titlebg;
+  border-radius: 0;
+}
+
+#waves {
+  z-index: 1;
+  position: relative;
+  top: calc(100vh - $waveheight);
+  left: -8px;
+  height: $waveheight;
+  width: 100vw;
+  background: none;
+  border-radius: 0px;
+  margin: 0px;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  animation: waveHeight 1s ease-in 1s forwards;
+  animation-play-state: paused;
+  animation-delay: calc(#{var(--scrollPercent)} * -1s);
+  width: 100vw;
+}
+
+@keyframes waveHeight {
+  0% {height: 0%;}
+  50% {height: 100%;}
+  100% {height: 0%;}
+}
+
+#bar {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  margin-left: -8px;
+  margin-top: calc(100vh - $waveheight);
+  border-radius: 0px;
+  background-color: $tertiary;
+  height: max-content;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.button {
+  background-color: $tertiary;
+  color: $text;
+  height: max-content;
+  padding: 5vh 3vw;
+  border: 1px solid $text;
+  border-bottom: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  transition-duration: 0.5s;
+  float: left;
+  text-align: center;
+}
+
+.button:hover {
+  color: $tertiary;
+  background-color: $text;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+.section {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: -8px;
+  padding-top: 15vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: $bg;
+  border-radius: 0px;
+}
+
+#A_section {
+  height: 10000px;
+}
