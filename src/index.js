@@ -20,6 +20,7 @@ window.addEventListener(
       "--scrollPercent",
       window.pageYOffset / window.innerHeight
     );
+    document.body.style.setProperty("--pageHeight", document.body.offsetHeight);
   },
   false
 );

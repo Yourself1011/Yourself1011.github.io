@@ -5,6 +5,9 @@
  */
 
 import "./styles.scss";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import * as settings from "./particles.json";
 
 function MakePages() {
   let end = pages.map((page) => (
@@ -41,9 +44,28 @@ function scrollToPage(page) {
 }
 
 export default function App() {
+  const particlesInit = async (main) => {
+    console.log(main);
+
+    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(main);
+  };
+
+  const particlesLoaded = (container) => {
+    console.log("loaded ", container);
+  };
+
   return (
     <div className="App">
       <div id="titlescreen">
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={settings.default}
+        />
         <div id="title">
           <h1>Daniel Zhang</h1>
           <p>WOw look at this website</p>
@@ -78,6 +100,7 @@ export default function App() {
       <div id="bar">
         <GenerateButtons />
       </div>
+
       <MakePages />
     </div>
   );

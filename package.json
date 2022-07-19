@@ -7,7 +7,9 @@
   "dependencies": {
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-scripts": "4.0.0"
+    "react-scripts": "4.0.0",
+    "react-tsparticles": "2.1.3",
+    "tsparticles": "2.1.3"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
@@ -18,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "git-config": "git config --global user.email \"d.zhang200788@gmail.com\" && git config --global user.name \"Daniel Zhang\""
   },
   "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "homepage": "https://yourself1011.github.io"

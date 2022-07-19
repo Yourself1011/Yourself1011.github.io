@@ -1,11 +1,18 @@
+/**
+ * Daniel Zhang's devlopment portfolio
+ * @copyright 2022 Daniel Zhang
+ * @license BSD-3-Clause
+ */
+
 $bg: #2C3639;
-$titlebg: #9840db;
+// $titlebg: #9840db;
 $secondary: #3F4E4F;
 $tertiary: #A27B5C;
 $blue: #494ca6;
 $lightblue: #a7c0fa;
 $text: #DCD7C9;
 $waveheight: 30vh;
+$parallaxdegree: 1;
 $redlines: false;
 
 .App {
@@ -53,12 +60,12 @@ h1 {
 
 #titlescreen {
   position: fixed;
-  z-index: 0;
+  z-index: 0.1;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: $titlebg;
+  background: none;
   border-radius: 0;
 }
 
@@ -92,7 +99,7 @@ h1 {
 
 #bar {
   position: sticky;
-  z-index: 3;
+  z-index: 5;
   top: 0;
   margin-left: -8px;
   margin-top: calc(100vh - $waveheight);
@@ -130,16 +137,23 @@ button {
 
 .section {
   position: relative;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   margin-left: -8px;
   padding-top: 15vh;
   width: 100vw;
   z-index: 2;
   background-color: $bg;
   border-radius: 0px;
+  p {
+    z-index: 4;
+  }
 }
 
 #A_section {
   height: 10000px;
 }
+
+// #tsparticles {
+
+// }
