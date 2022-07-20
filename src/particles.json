@@ -71,7 +71,7 @@
       "consent": false,
       "distance": 300,
       "enable": true,
-      "opacity": 0.4,
+      "opacity": 0.5,
       "width": 1
     },
     "move": {
@@ -82,7 +82,7 @@
           "y": 1200
         }
       },
-      "bounce": false,
+      "bounce": true,
       "direction": "none",
       "enable": true,
       "outMode": "out",

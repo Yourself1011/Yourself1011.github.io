@@ -15,6 +15,12 @@ $waveheight: 30vh;
 $parallaxdegree: 1;
 $redlines: false;
 
+* {
+  @if $redlines {
+    outline: red solid 1px;
+  }
+}
+
 .App {
   font-family: sans-serif;
   background-color: $bg;
@@ -29,9 +35,6 @@ div {
   border-radius: 10px;
   color: $text;
 
-  @if $redlines {
-    outline: red solid 1px;
-  }
 }
 
 p {
@@ -52,9 +55,13 @@ h1 {
   left: 5vw;
   top: 25vh;
   width: 300px;
+  max-width: 90vw;
   padding: 30px;
+  backdrop-filter: blur(8px);
+  background-color: rgba($bg, 0.5);
   h1 {
     color: $lightblue;
+    margin-top: 10px;
   }
 }
 

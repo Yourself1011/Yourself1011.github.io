@@ -67,8 +67,8 @@ export default function App() {
           options={settings.default}
         />
         <div id="title">
+          <p>Hi, I'm</p>
           <h1>Daniel Zhang</h1>
-          <p>WOw look at this website</p>
         </div>
       </div>
       <div id="waves">
