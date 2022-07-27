@@ -21,13 +21,31 @@ $redlines: false;
   }
 }
 
+html {
+  // overflow: auto;
+  min-height: 100%;
+}
+
 .App {
   font-family: sans-serif;
   background-color: $bg;
+  height: 100%;
+  width: 100%
+}
+
+#root {
+  height: 100%;
 }
 
 body {
   background-color: $bg;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  // transform-style: preserve-3d;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  // perspective: calc($parallaxdegree * 1px);
 }
 
 div {
@@ -67,20 +85,25 @@ h1 {
 
 #titlescreen {
   position: fixed;
-  z-index: 0.1;
+  z-index: 0;
+  transform: translateZ(0);
+  overflow: hidden;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: none;
   border-radius: 0;
+  #tsparticles {
+    height: 100%
+  }
 }
 
 #waves {
   z-index: 1;
   position: relative;
   top: calc(100vh - $waveheight);
-  left: -8px;
+  // left: -8px;
   height: $waveheight;
   width: 100vw;
   background: none;
@@ -108,7 +131,7 @@ h1 {
   position: sticky;
   z-index: 5;
   top: 0;
-  margin-left: -8px;
+  // margin-left: -8px;
   margin-top: calc(100vh - $waveheight);
   border-radius: 0px;
   background-color: $tertiary;
@@ -146,21 +169,54 @@ button {
   position: relative;
   top: 0px;
   left: 0px;
-  margin-left: -8px;
+  // margin-left: -8px;
   padding-top: 15vh;
   width: 100vw;
   z-index: 2;
   background-color: $bg;
   border-radius: 0px;
-  p {
+  p, h1 {
     z-index: 4;
   }
 }
 
-#A_section {
-  height: 10000px;
+#Resume {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 0.70718232%;
+  border: none;
+
+  canvas {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 2;
+  }
+
+  h1 {
+    position: relative;
+    margin-top: 0;
+  }
+
+  #resume-div {  
+    position: relative;
+    width: 100%;
+    padding-top: min(141.40625%, 1165px);
+    background: none;
+    iframe {
+      position: absolute;
+      max-width: 824px;
+      width: 100%;
+      max-height: 1165px;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      bottom: 0;
+      transform: translate(-50%, -50%);
+      border: none;
+      overflow: hidden;
+      z-index: 3;
+    }
+  }
 }
-
-// #tsparticles {
-
-// }

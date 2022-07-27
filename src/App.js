@@ -8,6 +8,7 @@ import "./styles.scss";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import * as settings from "./particles.json";
+import Trianglify from "react-trianglify";
 
 function MakePages() {
   let end = pages.map((page) => (
@@ -29,7 +30,14 @@ function GenerateButton(page) {
       key={page.name}
       style={{ width: `${100 / pages.length}vw` }}
       onClick={() => {
-        scrollToPage(page.name);
+        let pageTop = document.getElementById(page.name).getBoundingClientRect()
+          .top;
+        let barHeight = document.getElementById("bar").offsetHeight;
+
+        window.scrollTo({
+          top: pageTop + window.pageYOffset - barHeight,
+          behavior: "smooth"
+        });
       }}
     >
       {page.name.replace("_", " ")}
@@ -37,19 +45,9 @@ function GenerateButton(page) {
   );
 }
 
-function scrollToPage(page) {
-  document.getElementById(page).scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
 export default function App() {
   const particlesInit = async (main) => {
     console.log(main);
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(main);
   };
 
@@ -107,16 +105,34 @@ export default function App() {
 }
 
 let pages = [
+  //   {
+  //     name: "About_Me",
+  //     html: (
+  //       <>
+  //         <h1>About Me</h1>
+  //         <p>
+  //           I am a quick, eager learner, and am developing the skills for a future
+  //           in software engineering
+  //         </p>
+  //       </>
+  //     )
+  //   },
   {
-    name: "A_section",
-    html: <p>lorem ipsum dolor sit amet</p>
-  },
-  {
-    name: "Another_section",
+    name: "Resume",
     html: (
-      <p>
-        sLFJDSKLJFLKD<b>JLK</b>FJDLLkjdslf
-      </p>
+      <>
+        <h1>My Resume</h1>
+        <div id="resume-div">
+          <iframe
+            src="https://drive.google.com/file/d/1KUxfa9MNOW0ZjcVuMHvlZE1-GJHGwcQt/preview"
+            allow="autoplay"
+            title="resume"
+            id="resume-iframe"
+            scrolling="no"
+          ></iframe>
+        </div>
+        <Trianglify xColors={["#141e30", "#243b55"]} />
+      </>
     )
   }
 ];
