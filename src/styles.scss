@@ -4,16 +4,32 @@
  * @license BSD-3-Clause
  */
 
-$bg: #2C3639;
-// $titlebg: #9840db;
-$secondary: #3F4E4F;
-$tertiary: #A27B5C;
+// $bg: #2C3639;
+// $secondary: #3F4E4F;
+// $tertiary: #A27B5C;
+// $blue: #494ca6;
+// $lightblue: #a7c0fa;
+// $text: #DCD7C9;
+$bg: #141e30ff;
+$secondary: #04293aff;
+$secondary2: #243b55ff;
+$tertiary: #A24936;
+$highlight: #D36135;
 $blue: #494ca6;
 $lightblue: #a7c0fa;
 $text: #DCD7C9;
-$waveheight: 30vh;
-$parallaxdegree: 1;
+$waveheight: min(30vh, 40vw);
 $redlines: false;
+$vh: calc(#{var(--height, 100vh)}/100);
+$vw: calc(#{var(--width, 100vw)}/100);
+
+:root {
+  --bg: #{$bg};
+  --secondary: #{$secondary};
+  --secondary2: #{$secondary2};
+  --tertiary: #{$tertiary};
+  --highlight: #{$highlight};
+}
 
 * {
   @if $redlines {
@@ -24,6 +40,22 @@ $redlines: false;
 html {
   // overflow: auto;
   min-height: 100%;
+}
+
+#mobile {
+  display: inline-block;
+}
+#desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px){
+  #mobile {
+    display: none;
+  }
+  #desktop {
+    display: inline-block;
+  }
 }
 
 .App {
@@ -55,34 +87,151 @@ div {
 
 }
 
-p {
+p, a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 18pt;
   margin: 0px;
   padding: 10px;
+  color: $text;
 }
 
 h1 {
   font-family: "Ubuntu", sans-serif;
   font-size: 50pt;
+  color: $text
 }
 
 #title {
   position: fixed;
-  left: 5vw;
-  top: 25vh;
-  width: 300px;
-  max-width: 90vw;
-  padding: 30px;
+  width: calc(90 * $vw);
+  height: calc(40 * $vh);
+  left: 0;
+  top: 0;
   backdrop-filter: blur(8px);
   background-color: rgba($bg, 0.5);
-  h1 {
-    color: $lightblue;
-    margin-top: 10px;
+  margin: calc(5 * $vw);
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 7%;
+
+    h1 {
+      color: $highlight;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+}
+
+.links {
+  position: fixed;
+  top: 50%;
+  bottom: calc(-5 * $vh);
+  left: 0;
+  right: 50%;
+  margin: 5%;
+  padding: 5%;
+  backdrop-filter: blur(8px);
+  background-color: rgba($bg, 0.5);
+  text-align: center;
+  display: table;
+
+  a {
+    display: table-row;
+
+    font-size: calc(28.6vh/3); 
+  }
+  a:link { text-decoration: none; }
+  a:visited { text-decoration: none; }
+  a:hover { text-decoration: none; }
+  a:active { text-decoration: none; }
+}
+
+#titlebuttons {
+  position: fixed;
+  left: 50%;
+  right: 0;
+  top: 50%;
+  bottom: calc(5 * $vh);
+  margin: 5%;
+  background: none;
+
+  button {
+    background: $highlight;
+    border: none;
+    color: $text;
+    font-size: min(8vw, 5vh);
+    width: 100%;
+    padding: min(10%, 3vh);
+    transform: skewX(-10deg);
+    margin-bottom: calc(10 * $vh);
+    transition-duration: 0.5s;
+    div {
+      background: none;
+      transform: skewX(10deg);
+    }
+  }
+  button:hover {
+    background: $text;
+    div {
+      color: $highlight;
+    }
   }
 }
 
+.desktop {
+  display: none;
+}
+
+@media only screen and (orientation: landscape) {
+  .links {
+    padding: 2% 5%;
+    a {
+      display: table-cell;
+    }
+  }
+  #title {
+    span {
+      padding-top: 2%;
+      font-size: 5vh;
+    }
+    h1 {
+      font-size: 10vh;
+    }
+  }
+}
+
+@media 
+  only screen and (min-width: 37em) and (orientation: portrait), 
+  (min-height: 37em) and (orientation: landscape)
+{
+  #title {
+    position: fixed;
+    left: 5vw;
+    top: 25vh;
+    width: 300px;
+    max-width: 90vw;
+    padding: 30px;
+    backdrop-filter: blur(8px);
+    background-color: rgba($bg, 0.5);
+    h1 {
+      color: $highlight;
+      margin-top: 10px;
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: inline-block;
+  }
+}
 #titlescreen {
   position: fixed;
   z-index: 0;
@@ -109,6 +258,7 @@ h1 {
   background: none;
   border-radius: 0px;
   margin: 0px;
+  pointer-events: none;
 }
 
 .wave {
@@ -145,11 +295,10 @@ h1 {
   color: $text;
   height: max-content;
   padding: 5vh 3vw;
-  border: 1px solid $text;
-  border-bottom: none;
+  border: none;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 100%;
+  font-size: min(7vw, 20pt);
   transition-duration: 0.5s;
   float: left;
   text-align: center;

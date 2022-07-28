@@ -7,6 +7,7 @@
   "dependencies": {
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-icons": "4.4.0",
     "react-scripts": "4.0.0",
     "react-trianglify": "3.0.3",
     "react-tsparticles": "2.1.3",

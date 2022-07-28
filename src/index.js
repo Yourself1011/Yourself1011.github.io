@@ -22,11 +22,20 @@ window.addEventListener(
     );
     document.body.style.setProperty("--pageHeight", document.body.offsetHeight);
   },
-  false
+  {passive: true}
 );
+
+window.addEventListener("resize", () => {
+  document.body.style.setProperty("--height", `${window.innerHeight}px`);
+  document.body.style.setProperty("--width", `${window.innerWidth}px`);
+}, {passive: true});
 
 root.render(
   <StrictMode>
     <App />
   </StrictMode>
 );
+
+
+document.body.style.setProperty("--height", `${window.innerHeight}px`);
+document.body.style.setProperty("--width", `${window.innerWidth}px`);
