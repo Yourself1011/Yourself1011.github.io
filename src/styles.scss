@@ -209,29 +209,57 @@ h1 {
   only screen and (min-width: 37em) and (orientation: portrait), 
   (min-height: 37em) and (orientation: landscape)
 {
+  
+
+  .desktop {
+    display: inline-block;
+  }
+
   #title {
     position: fixed;
-    left: 5vw;
-    top: 25vh;
-    width: 300px;
-    max-width: 90vw;
-    padding: 30px;
+    width: calc(90 * $vw);
+    height: calc(40 * $vh);
+    left: 0;
+    top: 0;
     backdrop-filter: blur(8px);
     background-color: rgba($bg, 0.5);
-    h1 {
-      color: $highlight;
-      margin-top: 10px;
+    margin: calc(5 * $vw);
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      padding: 7%;
+      padding-top: 4%;
+
+      h1 {
+        color: $highlight;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .links {
+    text-align: left;
+    font-size: calc(35vh/6);
+    overflow-wrap: anywhere;
+    justify-content: space-between;
+    display: inline;
+    line-height: 1.5;
+    a {
+      padding: 0;
+      margin-left: 5%;
+      font-size: calc(35vh/6);
+      display: inline;
     }
   }
 
   .mobile {
     display: none;
   }
-
-  .desktop {
-    display: inline-block;
-  }
 }
+
 #titlescreen {
   position: fixed;
   z-index: 0;

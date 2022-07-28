@@ -14,7 +14,8 @@ import {
   BsGithub,
   BsStackOverflow,
   BsEnvelope,
-  BsArrowDown
+  BsArrowDown,
+  BsArrowUpRightSquare
 } from "react-icons/bs";
 
 function MakePages() {
@@ -94,6 +95,30 @@ export default function App() {
           </a>
           <a href="mailto:yourself1011@pm.me" target="_blank" rel="noreferrer">
             <BsEnvelope />
+          </a>
+        </div>
+
+        <div className="links desktop">
+          <a
+            href="https://github.com/Yourself1011"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BsGithub /> Github <BsArrowUpRightSquare />
+          </a>
+
+          <br />
+          <a
+            href="https://stackoverflow.com/users/11558361/yourself1011"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BsStackOverflow /> Stack Overflow <BsArrowUpRightSquare />
+          </a>
+          <br />
+
+          <a href="mailto:yourself1011@pm.me" target="_blank" rel="noreferrer">
+            <BsEnvelope /> Email <BsArrowUpRightSquare />
           </a>
         </div>
 
