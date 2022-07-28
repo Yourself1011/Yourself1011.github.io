@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1080px" height="1080px" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Lato">@import url(https://fonts.googleapis.com/css2?family=Lato%3Aital%2Cwght%400%2C100%3B0%2C300%3B0%2C400%3B0%2C700%3B0%2C900%3B1%2C100%3B1%2C300%3B1%2C400%3B1%2C700%3B1%2C900&amp;display=swap);</style>
+  </defs>
+  <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(211, 97, 53);" cx="540" cy="540" rx="540" ry="540"/>
+  <text style="fill: rgb(36, 59, 85); font-family: Lato; font-size: 37.3211px; font-weight: 700; line-height: 59.7137px; white-space: pre;" transform="matrix(14.71704, 0, 0, 14.718232, 173.920563, 728.605164)">DZ</text>
+</svg>

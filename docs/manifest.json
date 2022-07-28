@@ -1,0 +1,25 @@
+{
+  "background-color": "#243B55",
+  "short_name": "Daniel Zhang",
+  "name": "Daniel Zhang's Development Portfolio",
+  "display": "fullscreen",
+  "description": "The development portfolio for Daniel Zhang",
+  "icons": [
+    {
+      "src": "./icons/DanielZhang.svg",
+      "sizes": "any",
+      "type": "images/svg"
+    },
+    {
+      "src": "./icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#243B55"
+}
