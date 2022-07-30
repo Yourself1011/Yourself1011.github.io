@@ -205,6 +205,7 @@ h1 {
   }
 }
 
+// Desktop
 @media 
   only screen and (min-width: 37em) and (orientation: portrait), 
   (min-height: 37em) and (orientation: landscape)
@@ -243,16 +244,92 @@ h1 {
   .links {
     text-align: left;
     font-size: calc(35vh/6);
-    overflow-wrap: anywhere;
     justify-content: space-between;
     display: inline;
     line-height: 1.5;
-    a {
-      padding: 0;
-      margin-left: 5%;
-      font-size: calc(35vh/6);
-      display: inline;
+
+    #linksDesktopPadding {
+      // padding: 2% 5%;
+      width: 100%;
+      height: 100%;
+      background: none;
+      overflow: hidden;
+      white-space: nowrap;
     }
+
+    button {
+      padding: 0;
+      font-size: calc(35vh/6);
+      display: block;
+      transition-duration: 0.5s;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      text-align: left;
+      height: 1.4em;
+      width: 30vw;
+      position: absolute;
+
+      div {
+        background: none;
+      }
+
+      .inner {
+        position: absolute;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 30vw;
+        top: 0;
+      }
+
+      .linkName.inner {
+        left: 3px;
+      }
+
+      .linkURL.inner {
+        left: calc(-40vw + 3px);
+      }
+
+      .outer {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 0;
+      }
+
+      .linkName.outer {
+        width: 40vw;
+        transition: transform 0.5s forwards, width 0.5s forwards, border-right 0.05s forwards;
+      }
+
+      .linkURL.outer {
+        left: 40vw;
+        zoom: 1;
+      }
+    }
+
+    button:hover > .outer {
+      transform: translateX(-40vw);
+      width: 40vw;
+      transition-duration: 0.5s;
+    }
+
+    button:hover > .linkName.outer {
+      border-right: 3px solid $text;
+      transform: translateX(calc(-40vw));
+      width: 40vw;
+    }
+
+    button:hover > .outer > .inner {
+      transform: translateX(40vw);
+      transition-duration: 0.5s;
+    }
+
   }
 
   .mobile {

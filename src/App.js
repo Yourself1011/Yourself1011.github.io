@@ -99,27 +99,67 @@ export default function App() {
         </div>
 
         <div className="links desktop">
-          <a
-            href="https://github.com/Yourself1011"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BsGithub /> Github <BsArrowUpRightSquare />
-          </a>
+          <div id="linksDesktopPadding">
+            <button
+              onClick={() => {
+                window.open("https://github.com/Yourself1011", "_blank");
+              }}
+              style={{ top: "2vh" }}
+            >
+              <div className="outer animation linkName">
+                <div className="inner animation linkName">
+                  <BsGithub /> Github <BsArrowUpRightSquare />
+                </div>
+              </div>
 
-          <br />
-          <a
-            href="https://stackoverflow.com/users/11558361/yourself1011"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BsStackOverflow /> Stack Overflow <BsArrowUpRightSquare />
-          </a>
-          <br />
+              <div className="outer animation linkURL">
+                <div className="inner animation linkURL">
+                  github.com/Yourself1011
+                </div>
+              </div>
+            </button>
 
-          <a href="mailto:yourself1011@pm.me" target="_blank" rel="noreferrer">
-            <BsEnvelope /> Email <BsArrowUpRightSquare />
-          </a>
+            <button
+              onClick={() => {
+                window.open(
+                  "https://stackoverflow.com/users/11558361/yourself1011",
+                  "_blank"
+                );
+              }}
+              style={{ top: "14vh" }}
+            >
+              <div className="outer animation linkName">
+                <div className="inner animation linkName">
+                  <BsStackOverflow /> Stack Overflow <BsArrowUpRightSquare />
+                </div>
+              </div>
+
+              <div className="outer animation linkURL">
+                <div className="inner animation linkURL">
+                  stackoverflow.com/users/11558361/yourself1011
+                </div>
+              </div>
+            </button>
+
+            <button
+              onClick={() => {
+                window.open("mailto:yourself1011@pm.me", "_blank");
+              }}
+              style={{ top: "26vh" }}
+            >
+              <div className="outer animation linkName">
+                <div className="inner animation linkName">
+                  <BsEnvelope /> Email <BsArrowUpRightSquare />
+                </div>
+              </div>
+
+              <div className="outer animation linkURL">
+                <div className="inner animation linkURL">
+                  yourself1011@pm.me
+                </div>
+              </div>
+            </button>
+          </div>
         </div>
 
         <div id="titlebuttons">
