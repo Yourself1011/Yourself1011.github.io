@@ -283,6 +283,8 @@ h1 {
         white-space: nowrap;
         width: 30vw;
         top: 0;
+        transform: translateX(0);
+        transition: transform 0.5s;
       }
 
       .linkName.inner {
@@ -300,11 +302,15 @@ h1 {
         left: 0;
         height: 100%;
         border-radius: 0;
+        width: 40vw;
+        transform: translateX(0);
+        border-right: none;
+
+        transition: transform 0.5s, width 0.5s, border-right 0.05s;
       }
 
       .linkName.outer {
-        width: 40vw;
-        transition: transform 0.5s forwards, width 0.5s forwards, border-right 0.05s forwards;
+        transition: transform 0.5s, width 0.5s, border-right 0.05s;
       }
 
       .linkURL.outer {
@@ -316,10 +322,12 @@ h1 {
     button:hover > .outer {
       transform: translateX(-40vw);
       width: 40vw;
-      transition-duration: 0.5s;
+      transition: transform 0.5s, width 0.5s;
     }
 
     button:hover > .linkName.outer {
+      transition: transform 0.5s, width 0.5s, border-right 0.05s;
+
       border-right: 3px solid $text;
       transform: translateX(calc(-40vw));
       width: 40vw;
@@ -327,7 +335,7 @@ h1 {
 
     button:hover > .outer > .inner {
       transform: translateX(40vw);
-      transition-duration: 0.5s;
+      transition: transform 0.5s;
     }
 
   }
