@@ -90,15 +90,19 @@ div {
 p, a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 18pt;
+  font-size: 1.125em;
   margin: 0px;
   padding: 10px;
   color: $text;
 }
 
-h1 {
+h4 {
+  padding: 10px;
+}
+
+h1, h2 {
   font-family: "Ubuntu", sans-serif;
-  font-size: 50pt;
+  font-size: 3em;
   color: $text
 }
 
@@ -187,163 +191,7 @@ h1 {
   display: none;
 }
 
-@media only screen and (orientation: landscape) {
-  .links {
-    padding: 2% 5%;
-    a {
-      display: table-cell;
-    }
-  }
-  #title {
-    span {
-      padding-top: 2%;
-      font-size: 5vh;
-    }
-    h1 {
-      font-size: 10vh;
-    }
-  }
-}
 
-// Desktop
-@media 
-  only screen and (min-width: 37em) and (orientation: portrait), 
-  (min-height: 37em) and (orientation: landscape)
-{
-  
-
-  .desktop {
-    display: inline-block;
-  }
-
-  #title {
-    position: fixed;
-    width: calc(90 * $vw);
-    height: calc(40 * $vh);
-    left: 0;
-    top: 0;
-    backdrop-filter: blur(8px);
-    background-color: rgba($bg, 0.5);
-    margin: calc(5 * $vw);
-
-    span {
-      display: inline-block;
-      vertical-align: middle;
-      line-height: normal;
-      padding: 7%;
-      padding-top: 4%;
-
-      h1 {
-        color: $highlight;
-        margin-top: 10px;
-        text-align: center;
-      }
-    }
-  }
-
-  .links {
-    text-align: left;
-    font-size: calc(35vh/6);
-    justify-content: space-between;
-    display: inline;
-    line-height: 1.5;
-
-    #linksDesktopPadding {
-      // padding: 2% 5%;
-      width: 100%;
-      height: 100%;
-      background: none;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    button {
-      padding: 0;
-      font-size: calc(35vh/6);
-      display: block;
-      transition-duration: 0.5s;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-      background: none;
-      border: none;
-      text-align: left;
-      height: 1.4em;
-      width: 30vw;
-      position: absolute;
-
-      div {
-        background: none;
-      }
-
-      .inner {
-        position: absolute;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        width: 30vw;
-        top: 0;
-        transform: translateX(0);
-        transition: transform 0.5s;
-      }
-
-      .linkName.inner {
-        left: 3px;
-      }
-
-      .linkURL.inner {
-        left: calc(-40vw + 3px);
-      }
-
-      .outer {
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        border-radius: 0;
-        width: 40vw;
-        transform: translateX(0);
-        border-right: none;
-
-        transition: transform 0.5s, width 0.5s, border-right 0.05s;
-      }
-
-      .linkName.outer {
-        transition: transform 0.5s, width 0.5s, border-right 0.05s;
-      }
-
-      .linkURL.outer {
-        left: 40vw;
-        zoom: 1;
-      }
-    }
-
-    button:hover > .outer {
-      transform: translateX(-40vw);
-      width: 40vw;
-      transition: transform 0.5s, width 0.5s;
-    }
-
-    button:hover > .linkName.outer {
-      transition: transform 0.5s, width 0.5s, border-right 0.05s;
-
-      border-right: 3px solid $text;
-      transform: translateX(calc(-40vw));
-      width: 40vw;
-    }
-
-    button:hover > .outer > .inner {
-      transform: translateX(40vw);
-      transition: transform 0.5s;
-    }
-
-  }
-
-  .mobile {
-    display: none;
-  }
-}
 
 #titlescreen {
   position: fixed;
@@ -411,7 +259,7 @@ h1 {
   border: none;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: min(7vw, 20pt);
+  font-size: min(7vw, 1.125em);
   transition-duration: 0.5s;
   float: left;
   text-align: center;
@@ -435,11 +283,23 @@ button {
   padding-top: 15vh;
   width: 100vw;
   z-index: 2;
-  background-color: $bg;
+  background: none;
   border-radius: 0px;
-  p, h1 {
+  p, h2 {
     z-index: 4;
   }
+
+  h2 {
+    margin: 3vh 5vw;
+  }
+}
+
+canvas, #canvasFallback {
+  position: absolute;
+  top: 100vh;
+  width: 100vw;
+  height: calc(#{var(--pageHeight)} * 1px - #{var(--height)});
+  z-index: 2;
 }
 
 #Resume {
@@ -448,17 +308,8 @@ button {
   padding-top: 0.70718232%;
   border: none;
 
-  canvas {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100%;
-    z-index: 2;
-  }
-
-  h1 {
+  h2 {
     position: relative;
-    margin-top: 0;
   }
 
   #resume-div {  
@@ -480,5 +331,365 @@ button {
       overflow: hidden;
       z-index: 3;
     }
+  }
+}
+
+#Portfolio {
+  .swiper-thumbs {
+    background: none;
+    margin: 0 5%;
+    div {
+      background: none;
+    }
+
+    .swiper-slide {
+      border: none;
+      cursor: pointer;
+      margin: 2.5vh 1.25vh;
+      width: max-content;
+      height: max-content;
+
+      img {
+        border-radius: 5%;
+        height: 12.5vh;
+        width: 12.5vh;
+        margin: 3px;
+      }
+
+      img:hover {
+        border: 1px solid $tertiary;
+        margin: 2px;
+      }
+
+      .hover-content {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+        border-radius: 5%;
+        top: 3px;
+        bottom: 6px;
+        left: 3px;
+        right: 3px;
+
+        h3 {
+          margin: 5%;
+          font-size: 1.125em;
+          word-wrap: break-word;
+        }
+      }
+
+      img:hover + .hover-content {
+        transition-duration: 0.5s;
+        opacity: 1;
+        display: flex;
+        flex-flow: column wrap;
+        overflow: hidden;
+        background-color: rgba($tertiary, 0.5);
+      }
+
+      .swiper-lazy-loading {
+        visibility: hidden;
+      }
+
+      .swiper-lazy-loaded {
+        visibility: visible;
+      }
+
+    }
+    .swiper-slide.swiper-slide-thumb-active img {
+      border: 3px solid $tertiary;
+      margin: 0;
+    }
+  }
+  .swiper:not(.swiper-thumbs) {
+    background: none;
+    margin: 0 5%;
+    padding: 2%;
+
+    div {
+      background: none;
+    }
+
+    .swiper-slide {
+
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: stretch;
+      align-content: space-between;
+      border: 1px solid $text;
+      height: calc(100vh - (10vh + 1em) - 20vh);
+      width: 80%;
+
+      .main-content {
+        height: 75%;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+
+      .sidebar {
+        background-color: $bg;
+        font-size: 1.125em;
+        padding: 5%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        img {
+          min-height: 0;
+          max-height: 4em;
+          width: auto;
+          margin: 2%;
+          flex-shrink: 2;
+          border-radius: 5%;
+        }
+
+        .swiper-lazy-loading {
+          visibility: hidden;
+        }
+
+        .swiper-lazy-loaded {
+          visibility: visible;
+        }
+
+        .info {
+          margin-left: 3%;
+          h3 {
+            display: inline;
+          }
+        }
+      }
+
+      .body {
+        padding: 5%;
+        overflow-wrap: anywhere;
+        overflow-y: scroll;
+        text-align: justify;
+      }
+      
+      .footer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        padding: 5%;
+
+        button {
+          border: none;
+          transition-duration: 0.25s;
+          transform: scale(1) skewX(-10deg);
+          flex: 2 1 auto;
+          margin: 0 2%;
+
+          p {
+            color: $text;
+            transform: skewX(10deg);
+          }
+        }
+
+        button:hover {
+          transition-duration: 0.25s;
+          transform: scale(1.1) skewX(-10deg)
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .links {
+    padding: 2% 5%;
+    a {
+      display: table-cell;
+    }
+  }
+  #title {
+    span {
+      padding-top: 2%;
+      font-size: 5vh;
+    }
+    h1 {
+      font-size: 10vh;
+    }
+  }
+  
+  #Portfolio {
+    .swiper:not(.swiper-thumbs) {
+      .swiper-slide {
+        flex-flow: column nowrap;
+        .main-content {
+          display: flex;
+          flex-flow: row nowrap;
+
+          .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 0 2 auto;
+          }
+        }
+        .footer {
+          flex-flow: row nowrap;
+        }
+      }
+    }
+  }
+}
+
+// Desktop
+@media 
+  only screen and (min-width: 37em) and (orientation: portrait), 
+  (min-height: 37em) and (orientation: landscape)
+{
+
+  .desktop {
+    display: inline-block;
+  }
+
+
+  #Portfolio {
+    .swiper:not(.swiper-thumbs) {
+      .swiper-slide {
+        .sidebar .body .footer{
+          padding: 2%;
+        }
+
+        .sidebar {
+          gap: 2%;
+          .info *{
+            margin: 5% 0;
+          }
+        }
+      }
+    }
+  }
+
+  #title {
+    position: fixed;
+    width: calc(90 * $vw);
+    height: calc(40 * $vh);
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(8px);
+    background-color: rgba($bg, 0.5);
+    margin: calc(5 * $vw);
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      padding: 7%;
+      padding-top: 4%;
+
+      h1 {
+        color: $highlight;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .links {
+    text-align: left;
+    font-size: 1.125em;
+    justify-content: space-between;
+    display: inline;
+    line-height: 1.5;
+
+    #linksDesktopPadding {
+      // padding: 2% 5%;
+      width: 100%;
+      height: 100%;
+      background: none;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    button {
+      padding: 0;
+      font-size: 1.125em;
+      display: block;
+      transition-duration: 0.5s;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      text-align: left;
+      height: 1.4em;
+      width: 30vw;
+      position: absolute;
+
+      div {
+        background: none;
+      }
+
+      .inner {
+        position: absolute;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        border-radius: 0;
+        width: 30vw;
+        top: 0;
+        transform: translateX(0);
+        transition: transform 0.5s;
+      }
+
+      .linkName.inner {
+        left: 3px;
+      }
+
+      .linkURL.inner {
+        left: calc(-40vw + 3px);
+      }
+
+      .outer {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 40vw;
+        transform: translateX(0);
+        border-right: none;
+
+        transition: transform 0.5s, width 0.5s, border-right 0.05s;
+      }
+
+      .linkName.outer {
+        transition: transform 0.5s, width 0.5s, border-right 0.05s;
+      }
+
+      .linkURL.outer {
+        left: 40vw;
+        zoom: 1;
+      }
+    }
+
+    button:hover > .outer {
+      transform: translateX(-40vw);
+      width: 40vw;
+      transition: transform 0.5s, width 0.5s;
+    }
+
+    button:hover > .linkName.outer {
+      transition: transform 0.5s, width 0.5s, border-right 0.05s;
+
+      border-right: 3px solid $text;
+      transform: translateX(calc(-40vw));
+      width: 40vw;
+    }
+
+    button:hover > .outer > .inner {
+      transform: translateX(40vw);
+      transition: transform 0.5s;
+    }
+
+  }
+
+  .mobile {
+    display: none;
   }
 }

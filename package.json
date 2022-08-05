@@ -11,12 +11,13 @@
     "react-scripts": "4.0.0",
     "react-trianglify": "3.0.3",
     "react-tsparticles": "2.1.3",
+    "swiper": "8.3.2",
     "trianglify": "4.1.1",
     "tsparticles": "2.1.3"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
-    "sass": "^1.53.0",
+    "sass": "^1.54.0",
     "typescript": "4.1.3"
   },
   "scripts": {
@@ -26,6 +27,11 @@
     "eject": "react-scripts eject",
     "git-config": "git config --global user.email \"d.zhang200788@gmail.com\" && git config --global user.name \"Daniel Zhang\""
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "homepage": "https://yourself1011.github.io"
 }
