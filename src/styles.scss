@@ -29,6 +29,7 @@ $vw: calc(#{var(--width, 100vw)}/100);
   --secondary2: #{$secondary2};
   --tertiary: #{$tertiary};
   --highlight: #{$highlight};
+  --swiper-theme-color: #{$highlight} !important;
 }
 
 * {
@@ -361,32 +362,6 @@ canvas, #canvasFallback {
         margin: 2px;
       }
 
-      .hover-content {
-        opacity: 0;
-        position: absolute;
-        pointer-events: none;
-        border-radius: 5%;
-        top: 3px;
-        bottom: 6px;
-        left: 3px;
-        right: 3px;
-
-        h3 {
-          margin: 5%;
-          font-size: 1.125em;
-          word-wrap: break-word;
-        }
-      }
-
-      img:hover + .hover-content {
-        transition-duration: 0.5s;
-        opacity: 1;
-        display: flex;
-        flex-flow: column wrap;
-        overflow: hidden;
-        background-color: rgba($tertiary, 0.5);
-      }
-
       .swiper-lazy-loading {
         visibility: hidden;
       }
@@ -399,6 +374,31 @@ canvas, #canvasFallback {
     .swiper-slide.swiper-slide-thumb-active img {
       border: 3px solid $tertiary;
       margin: 0;
+    }
+
+    .swiper-slide::after {
+      opacity: 0;
+      content: "";
+    }
+
+    .swiper-slide:hover::after {
+      transition-duration: 0.5s;
+      opacity: 1;
+      content: attr(after);
+      background-color: rgba($tertiary, 0.5);
+      position: absolute;
+      pointer-events: none;
+      border-radius: 5%;
+      top: 3px;
+      bottom: 6px;
+      left: 3px;
+      right: 3px;
+      font-size: 1.125em;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
   .swiper:not(.swiper-thumbs) {
@@ -425,6 +425,9 @@ canvas, #canvasFallback {
         height: 75%;
         display: flex;
         flex-flow: column nowrap;
+        img {
+          width: 100%;
+        }
       }
 
       .sidebar {
@@ -525,7 +528,7 @@ canvas, #canvasFallback {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 0 2 auto;
+            flex: 0 0.75 auto;
           }
         }
         .footer {
@@ -556,7 +559,7 @@ canvas, #canvasFallback {
 
         .sidebar {
           gap: 2%;
-          .info *{
+          .info *:not(svg){
             margin: 5% 0;
           }
         }

@@ -106,16 +106,12 @@ function Carousel() {
         keyboard
       >
         {projects.map((project) => (
-          <SwiperSlide>
+          <SwiperSlide after={project.name}>
             <img
               data-src={project.image}
               alt={project.name}
               className="swiper-lazy"
-            ></img>
-            <div className="hover-content">
-              <h3>{project.name}</h3>
-              <p>{project.shortDesc}</p>
-            </div>
+            />
             <div class="swiper-lazy-preloader"></div>
           </SwiperSlide>
         ))}
@@ -360,14 +356,19 @@ let projects = [
     content: (
       <>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          This is my development portfolio. You are on it right now. It contains
+          my resume, and my projects. It is responsive, and looks great on all
+          platforms and devices.
         </p>
+        <h4>Uses:</h4>
+        <ul>
+          <li>React</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Trianglify</li>
+          <li>TsParticles</li>
+          <li>Swiper</li>
+        </ul>
       </>
     ),
     status: {
@@ -479,9 +480,211 @@ let projects = [
         url: "https://top.gg/bot/795319933314662452"
       }
     ]
+  },
+  {
+    name: "StatBot",
+    image:
+      "https://cdn.discordapp.com/avatars/764276231805075456/6c98b95b349aee95867ae1d3ba2cefca.webp",
+    shortDesc: "A Discord bot that displays statistics of all kinds.",
+    content: (
+      <>
+        <p>
+          StatBot is a easy-to-use, very customizable bot that displays the
+          statistics of your server.
+        </p>
+
+        <h4>Why this bot?</h4>
+        <p>
+          What sets this bot apart from the other statistics bots is that it
+          delivers statistics faster, making use of messages and embeds, rather
+          than the traditional channel names. Using messages means that it can
+          also display more statistics in less space.
+        </p>
+        <br />
+        <br />
+        <p>
+          With a setup wizard, many settings, and many statistics to show,
+          including graphs, there's no reason not to give this bot a try!
+        </p>
+      </>
+    ),
+    status: {
+      content: (
+        <>
+          <BsCheck2Circle /> Complete
+        </>
+      ),
+      color: "#a5ff90"
+    },
+    buttons: [
+      {
+        content: (
+          <>
+            <BsGithub /> Source
+          </>
+        ),
+        color: "#484f58",
+        url: "https://github.com/Yourself1011/StatBot"
+      },
+      {
+        content: (
+          <>
+            <SiDiscord /> Discord Invite
+          </>
+        ),
+        color: "#5865f2",
+        url:
+          "https://discord.com/oauth2/authorize?client_id=764276231805075456&scope=bot&permissions=314388"
+      },
+      {
+        content: (
+          <>
+            <BiBot /> Top.gg
+          </>
+        ),
+        color: "#ff3366",
+        url: "https://top.gg/bot/764276231805075456"
+      }
+    ]
+  },
+  {
+    name: "Meleti",
+    image:
+      "https://cdn.discordapp.com/avatars/977332758600896613/9ec7ff5650f41272e2e22e8ed0a02106.webp",
+    shortDesc: "An all-in-one productivity Discord bot",
+    content: (
+      <>
+        <h4 id="meleti">Meleti</h4>
+        <p>
+          Daniel Zhang, Li Feng Yin, Jashanpreet Singh, and Jeffrey Zang&#39;s
+          submission for Jamhacks 6. <br />
+        </p>
+        <p>
+          The all-in-one productivity discord bot, jam-packed with features (pun
+          intented). Meleti has a study timer, scientifically proven to produce
+          best results, to-do lists to keep track of all your crucial tasks,
+          recurring reminders for wordle fans that want to keep their streak,
+          and much more! Best of all, Meleti features a reward system featuring
+          famous artifacts from history to encourage you to keep studying.{" "}
+        </p>
+        <h4 id="version-history">Version History</h4>
+        <p>1.0 Initial release</p>
+        <h4 id="works-cited">Works Cited</h4>
+        <p>
+          Images:{" "}
+          <a href="https://www.flaticon.com/authors/special/lineal-color?author_id=1">
+            https://www.flaticon.com/authors/special/lineal-color?author_id=1
+          </a>
+          Discord.js:{" "}
+          <a href="https://discord.js.org/#/">https://discord.js.org/#/</a>
+        </p>
+      </>
+    ),
+    status: {
+      content: (
+        <>
+          <BsCheck2Circle /> Complete
+        </>
+      ),
+      color: "#a5ff90"
+    },
+    buttons: [
+      {
+        content: (
+          <>
+            <BsGithub /> Source
+          </>
+        ),
+        color: "#484f58",
+        url: "https://github.com/Yourself1011/meleti"
+      },
+      {
+        content: (
+          <>
+            <SiDiscord /> Discord Server Invite
+          </>
+        ),
+        color: "#5865f2",
+        url: "https://discord.com/invite/wyPGW6Asbx"
+      }
+    ]
+  },
+  {
+    name: "Police Pursuit",
+    image: "images/police-pursuit.png",
+    shortDesc: "A game about dodging obstacles while chased by police",
+    content: (
+      <>
+        <p>
+          Entry in <a href="http://www.pyweek.org/30/">PyWeek #31</a>
+        </p>
+        <p>Theme: Cops</p>
+        <p>Team: nah</p>
+        <p>Members: LargAnk, Yourself</p>
+        <h4 id="dependencies-">Dependencies:</h4>
+        <p>
+          Python 3: <a href="http://www.python.org/">http://www.python.org/</a>
+          <br />
+          PyGame: <a href="http://www.pygame.org/">http://www.pygame.org/</a>
+        </p>
+        <h4 id="how-to-play-">How to Play:</h4>
+        <ul>
+          <li>Locate the &quot;main.py&quot; file and double click it.</li>
+          <li>Use WASD or arrow keys to control your car</li>
+          <li>Space to pause</li>
+        </ul>
+        <h4 id="screenshots-">Screenshots:</h4>
+        <p>
+          <img
+            data-src="https://user-images.githubusercontent.com/66485719/178348494-787fa971-6353-4205-9080-08a77811315a.png"
+            alt="police pursuit screenshot"
+            className="swiper-lazy"
+          />
+          <img
+            data-src="https://user-images.githubusercontent.com/66485719/178348151-171882b2-cf13-4783-bd1e-a6fcd98b34de.png"
+            alt="police pursuit screenshot"
+            className="swiper-lazy"
+          />
+          <img
+            data-src="https://user-images.githubusercontent.com/66485719/178348538-403b32f1-e4b5-40fa-b334-cbb078d99860.png"
+            alt="police pursuit screenshot"
+            className="swiper-lazy"
+          />
+        </p>
+      </>
+    ),
+    status: {
+      content: (
+        <>
+          <BsCheck2Circle /> Complete
+        </>
+      ),
+      color: "#a5ff90"
+    },
+    buttons: [
+      {
+        content: (
+          <>
+            <BsGithub /> Source
+          </>
+        ),
+        color: "#484f58",
+        url: "https://github.com/jeffrey-zang/Police-Pursuit"
+      },
+      {
+        content: (
+          <>
+            <CgWebsite /> Submission
+          </>
+        ),
+        color: "#7289DA",
+        url: "https://pyweek.org/e/nah/"
+      }
+    ]
   }
 ];
 
+// ,
 // {
 //   name: "",
 //   image: "",
@@ -494,7 +697,11 @@ let projects = [
 //     </>
 //   ),
 //   status: {
-//     content: "",
+//     content: (
+//      <>
+//
+//      </>
+//     ),
 //     color: ""
 //   },
 //   buttons: [
