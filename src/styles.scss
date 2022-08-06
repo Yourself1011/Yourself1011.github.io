@@ -206,7 +206,8 @@ h1, h2 {
   background: none;
   border-radius: 0;
   #tsparticles {
-    height: 100%
+    height: 100%;
+    background-color: $secondary;
   }
 }
 
@@ -301,6 +302,8 @@ canvas, #canvasFallback {
   width: 100vw;
   height: calc(#{var(--pageHeight)} * 1px - #{var(--height)});
   z-index: 2;
+  background-color: $secondary;
+  background-color: linear-gradient(135deg, $bg 0%, $secondary2 100%);
 }
 
 #Resume {

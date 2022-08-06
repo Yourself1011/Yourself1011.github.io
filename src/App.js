@@ -5,11 +5,9 @@
  */
 
 import "./styles.scss";
-import React, { useState } from "react";
-import Particles from "react-tsparticles";
+import React, { useState, Suspense } from "react";
 import { loadFull } from "tsparticles";
 import * as settings from "./particles.json";
-import Trianglify from "react-trianglify";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs, Keyboard, Navigation, Pagination, Lazy } from "swiper";
 import "swiper/swiper-bundle.min.css";
@@ -25,6 +23,9 @@ import {
 import { CgWebsite } from "react-icons/cg";
 import { SiDiscord } from "react-icons/si";
 import { BiBot } from "react-icons/bi";
+
+const Trianglify = React.lazy(() => import("react-trianglify"))
+const Particles = React.lazy(() => import("react-tsparticles"));
 
 function MakePages() {
   let end = pages.map((page) => (
@@ -62,7 +63,7 @@ function Carousel() {
       >
         {/* <GeneratePortfolio /> */}
         {projects.map((project) => (
-          <SwiperSlide>
+          <SwiperSlide key={project.name}>
             <div className="carousel main-content">
               <div className="carousel sidebar">
                 <img
@@ -105,7 +106,7 @@ function Carousel() {
         keyboard
       >
         {projects.map((project) => (
-          <SwiperSlide after={project.name}>
+          <SwiperSlide after={project.name} key={project.name}>
             <img
               data-src={project.image}
               alt={project.name}
@@ -164,22 +165,20 @@ export default function App() {
   };
 
   const particlesLoaded = (container) => {
-    window.addEventListener("load", () => {
-      container.play();
-      console.log("started ", container);
-    });
     console.log("loaded ", container);
   };
 
   return (
     <div className="App">
       <div id="titlescreen">
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={settings.default}
-        />
+        <Suspense fallback={<div id="tsparticles"></div>}>
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={settings.default}
+          />
+        </Suspense>
         <div id="title">
           <span>
             <p>Hi, I'm</p>
@@ -340,12 +339,13 @@ export default function App() {
         <GenerateButtons />
       </div>
 
-      <div id="canvasFallback" style={{ backgroundColor: "$secondary" }}></div>
-      <Trianglify
-        xColors={["#141e30ff", "#243b55ff"]}
-        variance={0.9}
-        cellSize={50}
-      />
+      <Suspense fallback={<div id="canvasFallback"></div>}>
+        <Trianglify
+          xColors={["#141e30ff", "#243b55ff"]}
+          variance={5}
+          cellSize={35}
+        />
+      </Suspense>
       <MakePages />
     </div>
   );
