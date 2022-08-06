@@ -362,7 +362,7 @@ canvas, #canvasFallback {
         margin: 2px;
       }
 
-      .swiper-lazy-loading {
+      .swiper-lazy:not(.swiper-lazy-loaded) {
         visibility: hidden;
       }
 
@@ -448,7 +448,7 @@ canvas, #canvasFallback {
           border-radius: 5%;
         }
 
-        .swiper-lazy-loading {
+        .swiper-lazy:not(.swiper-lazy-loaded) {
           visibility: hidden;
         }
 

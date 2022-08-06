@@ -20,8 +20,7 @@ import {
   BsEnvelope,
   BsArrowDown,
   BsCheck2Circle,
-  BsClock,
-  BsXCircle
+  BsClock
 } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";
 import { SiDiscord } from "react-icons/si";
@@ -112,7 +111,7 @@ function Carousel() {
               alt={project.name}
               className="swiper-lazy"
             />
-            <div class="swiper-lazy-preloader"></div>
+            <div className="swiper-lazy-preloader"></div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -165,6 +164,10 @@ export default function App() {
   };
 
   const particlesLoaded = (container) => {
+    window.addEventListener("load", () => {
+      container.play();
+      console.log("started ", container);
+    });
     console.log("loaded ", container);
   };
 
@@ -633,24 +636,6 @@ let projects = [
           <li>Use WASD or arrow keys to control your car</li>
           <li>Space to pause</li>
         </ul>
-        <h4 id="screenshots-">Screenshots:</h4>
-        <p>
-          <img
-            data-src="https://user-images.githubusercontent.com/66485719/178348494-787fa971-6353-4205-9080-08a77811315a.png"
-            alt="police pursuit screenshot"
-            className="swiper-lazy"
-          />
-          <img
-            data-src="https://user-images.githubusercontent.com/66485719/178348151-171882b2-cf13-4783-bd1e-a6fcd98b34de.png"
-            alt="police pursuit screenshot"
-            className="swiper-lazy"
-          />
-          <img
-            data-src="https://user-images.githubusercontent.com/66485719/178348538-403b32f1-e4b5-40fa-b334-cbb078d99860.png"
-            alt="police pursuit screenshot"
-            className="swiper-lazy"
-          />
-        </p>
       </>
     ),
     status: {

@@ -36,7 +36,7 @@ window.addEventListener(
 
 root.render(
   <StrictMode>
-      <App />
+    <App />
   </StrictMode>
 );
 

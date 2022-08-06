@@ -1,10 +1,11 @@
 {
+  "autoPlay": false,
   "fullScreen": {
     "enable": true,
     "zIndex": 0
   },
   "detectRetina": true,
-  "fpsLimit": 120,
+  "fpsLimit": 60,
   "interactivity": {
     "events": {
       "onClick": {
