@@ -186,6 +186,9 @@ h1, h2 {
       color: $highlight;
     }
   }
+  button:active {
+    transform: scale(0.95)
+  }
 }
 
 .desktop {
