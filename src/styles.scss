@@ -431,12 +431,15 @@ canvas, #canvasFallback {
         img {
           width: 100%;
         }
+        .body p, .body a, .body h4{
+          padding: 0;
+        }
       }
 
       .sidebar {
         background-color: $bg;
         font-size: 1.125em;
-        padding: 5%;
+        padding: 7%;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -531,7 +534,11 @@ canvas, #canvasFallback {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 0 0.75 auto;
+            flex: 0 0 25%;
+          }
+
+          .body {
+            flex: 1 0 1px;
           }
         }
         .footer {

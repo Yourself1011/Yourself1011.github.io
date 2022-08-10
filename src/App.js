@@ -24,7 +24,7 @@ import { CgWebsite } from "react-icons/cg";
 import { SiDiscord } from "react-icons/si";
 import { BiBot } from "react-icons/bi";
 
-const Trianglify = React.lazy(() => import("react-trianglify"))
+const Trianglify = React.lazy(() => import("react-trianglify"));
 const Particles = React.lazy(() => import("react-tsparticles"));
 
 function MakePages() {
@@ -509,6 +509,13 @@ let projects = [
           With a setup wizard, many settings, and many statistics to show,
           including graphs, there's no reason not to give this bot a try!
         </p>
+        <br />
+        <br />
+        <ul>
+          <li>Node JS</li>
+          <li>Discord JS</li>
+          <li>MongoDB</li>
+        </ul>
       </>
     ),
     status: {
@@ -570,15 +577,16 @@ let projects = [
           and much more! Best of all, Meleti features a reward system featuring
           famous artifacts from history to encourage you to keep studying.{" "}
         </p>
-        <h4 id="version-history">Version History</h4>
-        <p>1.0 Initial release</p>
-        <h4 id="works-cited">Works Cited</h4>
+        <br />
         <p>
-          Images:{" "}
+          Images:
+          <br />
           <a href="https://www.flaticon.com/authors/special/lineal-color?author_id=1">
             https://www.flaticon.com/authors/special/lineal-color?author_id=1
           </a>
-          Discord.js:{" "}
+          <br /> <br />
+          Discord.js:
+          <br />
           <a href="https://discord.js.org/#/">https://discord.js.org/#/</a>
         </p>
       </>
@@ -624,17 +632,10 @@ let projects = [
         <p>Theme: Cops</p>
         <p>Team: nah</p>
         <p>Members: LargAnk, Yourself</p>
-        <h4 id="dependencies-">Dependencies:</h4>
-        <p>
-          Python 3: <a href="http://www.python.org/">http://www.python.org/</a>
-          <br />
-          PyGame: <a href="http://www.pygame.org/">http://www.pygame.org/</a>
-        </p>
-        <h4 id="how-to-play-">How to Play:</h4>
+        <h4>Uses:</h4>
         <ul>
-          <li>Locate the &quot;main.py&quot; file and double click it.</li>
-          <li>Use WASD or arrow keys to control your car</li>
-          <li>Space to pause</li>
+          <li>Python 3</li>
+          <li>PyGame</li>
         </ul>
       </>
     ),
