@@ -439,7 +439,7 @@ canvas, #canvasFallback {
       .sidebar {
         background-color: $bg;
         font-size: 1.125em;
-        padding: 7%;
+        padding: 5%;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -472,7 +472,8 @@ canvas, #canvasFallback {
 
       .body {
         padding: 5%;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        // word-break: keep-all;
         overflow-y: scroll;
         text-align: justify;
       }
@@ -534,7 +535,7 @@ canvas, #canvasFallback {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 0 0 25%;
+            flex: 0 0 20%;
           }
 
           .body {
