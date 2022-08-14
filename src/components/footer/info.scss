@@ -1,0 +1,31 @@
+#footer-info {
+  background: none;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  #copyright {
+    font-size: 1.17em;
+    font-weight: bold;
+  }
+
+  // Desktop
+  @media 
+    only screen and (min-width: 37em) and (orientation: portrait), 
+    (min-height: 37em) and (orientation: landscape)
+  {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+
+    #copyright {
+      font-size: 2em;
+    }
+    #footer-resume {
+      order: -1;
+    }
+  }
+}

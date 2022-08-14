@@ -1,0 +1,2 @@
+#footerSocials{background:none;width:100%;display:flex;justify-content:space-evenly;font-size:3em}#footerSocials a{color:var(--secondary2);padding:0;flex:0 1.5 1em;transition-duration:.5s}#footerSocials a svg{width:100%;height:100%}#footerSocials a:hover{color:var(--color);transition-duration:.5s}
+/*# sourceMappingURL=4.69be7101.chunk.css.map */

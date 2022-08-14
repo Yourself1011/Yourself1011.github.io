@@ -24,8 +24,11 @@ import { CgWebsite } from "react-icons/cg";
 import { SiDiscord } from "react-icons/si";
 import { BiBot } from "react-icons/bi";
 
+import Info from "./components/footer/info.js";
+
 const Trianglify = React.lazy(() => import("react-trianglify"));
 const Particles = React.lazy(() => import("react-tsparticles"));
+const Socials = React.lazy(() => import("./components/footer/socials.js"));
 
 function MakePages() {
   let end = pages.map((page) => (
@@ -200,7 +203,7 @@ export default function App() {
           >
             <BsStackOverflow />
           </a>
-          <a href="mailto:yourself1011@pm.me" target="_blank" rel="noreferrer">
+          <a href="mailto:daniel.zha@pm.me" target="_blank" rel="noreferrer">
             <BsEnvelope />
           </a>
         </div>
@@ -347,6 +350,31 @@ export default function App() {
         />
       </Suspense>
       <MakePages />
+      <div id="footer">
+        <svg
+          id="footerwaves"
+          viewBox="0 0 900 600"
+          width="900"
+          height="600"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 231L37.5 225.5C75 220 150 209 225 238.2C300 267.3 375 336.7 450 366.8C525 397 600 388 675 372.2C750 356.3 825 333.7 862.5 322.3L900 311L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z"
+            fill="#D36135"
+          ></path>
+          <path
+            d="M0 379L37.5 392.7C75 406.3 150 433.7 225 427.5C300 421.3 375 381.7 450 383.2C525 384.7 600 427.3 675 451C750 474.7 825 479.3 862.5 481.7L900 484L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z"
+            fill="#A24936"
+          ></path>
+        </svg>
+        <div id="footercontent">
+          <Suspense fallback={<div className="lazy-preloader"></div>}>
+            <Socials />
+          </Suspense>
+          <Info />
+        </div>
+      </div>
     </div>
   );
 }
