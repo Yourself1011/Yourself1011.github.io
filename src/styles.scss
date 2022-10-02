@@ -104,7 +104,8 @@ h4 {
 h1, h2 {
   font-family: "Ubuntu", sans-serif;
   font-size: 3em;
-  color: $text
+  color: $text;
+  text-align: center;
 }
 
 #title {
@@ -185,6 +186,9 @@ h1, h2 {
     div {
       color: $highlight;
     }
+  }
+  button:active {
+    transform: scale(0.95)
   }
 }
 
@@ -421,7 +425,7 @@ button {
       justify-content: space-between;
       align-items: stretch;
       align-content: space-between;
-      border: 1px solid $text;
+      border: 3px solid $text;
       height: calc(100vh - (10vh + 1em) - 20vh);
       width: 80%;
 
