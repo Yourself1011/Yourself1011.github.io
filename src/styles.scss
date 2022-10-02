@@ -16,7 +16,7 @@ $secondary2: #243b55ff;
 $tertiary: #A24936;
 $highlight: #D36135;
 $blue: #494ca6;
-$lightblue: #a7c0fa;
+// $lightblue: #a7c0fa;
 $text: #DCD7C9;
 $waveheight: min(30vh, 40vw);
 $redlines: false;
@@ -218,7 +218,7 @@ h1, h2 {
 #waves {
   z-index: 1;
   position: relative;
-  top: calc(100vh - $waveheight);
+  top: calc(100vh - $waveheight + 1px);
   // left: -8px;
   height: $waveheight;
   width: 100vw;
@@ -251,6 +251,7 @@ h1, h2 {
   // margin-left: -8px;
   margin-top: calc(100vh - $waveheight);
   border-radius: 0px;
+  border: 0px hidden $tertiary;
   background-color: $tertiary;
   height: max-content;
   width: 100vw;
@@ -300,14 +301,14 @@ button {
   }
 }
 
-canvas, #canvasFallback {
+.App > canvas, #canvasFallback {
   position: absolute;
   top: 100vh;
   width: 100vw;
   height: calc(#{var(--pageHeight)} * 1px - #{var(--height)});
   z-index: 2;
   background-color: $secondary;
-  background-color: linear-gradient(135deg, $bg 0%, $secondary2 100%);
+  background: linear-gradient(135deg, $bg 0%, $secondary2 100%);
 }
 
 #Resume {
@@ -443,7 +444,7 @@ canvas, #canvasFallback {
       .sidebar {
         background-color: $bg;
         font-size: 1.125em;
-        padding: 7%;
+        padding: 5%;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -476,7 +477,8 @@ canvas, #canvasFallback {
 
       .body {
         padding: 5%;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        // word-break: keep-all;
         overflow-y: scroll;
         text-align: justify;
       }
@@ -509,6 +511,59 @@ canvas, #canvasFallback {
   }
 }
 
+#footer {
+  width: 100vw;
+  position: relative;
+  bottom: -10vh;
+  z-index: 2;
+  background: none;
+
+  #footerwaves {
+    position: relative;
+    top: 2px;
+    width: 100vw;
+    height: 20vh;
+    path {
+      width: 100vw;
+    }
+  }
+
+  #footercontent {
+    background-color: $tertiary;
+    border-radius: 0;
+    padding: 5%;
+    margin-top: -6px;
+    .lazy-preloader {
+      width: 42px;
+      height: 42px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -21px;
+      margin-top: -21px;
+      z-index: 10;
+      transform-origin: 50%;
+      box-sizing: border-box;
+      border: 4px solid $highlight;
+      border-radius: 50%;
+      border-top-color: transparent;
+      background: none;
+      animation: preloader-spin 1s infinite linear;
+    }
+
+
+    @keyframes preloader-spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  }
+}
+
 @media only screen and (orientation: landscape) {
   .links {
     padding: 2% 5%;
@@ -538,7 +593,7 @@ canvas, #canvasFallback {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 0 0 25%;
+            flex: 0 0 20%;
           }
 
           .body {

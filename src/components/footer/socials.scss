@@ -1,0 +1,23 @@
+#footerSocials {
+  background: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3em;
+
+  a {
+    color: var(--secondary2);
+    padding: 0;
+    flex: 0 1.5 1em;
+    transition-duration: 0.5s;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  a:hover {
+    color: var(--color);
+    transition-duration: 0.5s;
+  }
+}
