@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Home from "./lib/sections/Home.svelte";
+    import Home from "./lib/routes/Home.svelte";
 </script>
 
 <main>

@@ -3,10 +3,6 @@
     export { propClass as class };
 </script>
 
-<!-- <div
-    class="circle absolute h-12 w-12 rounded-[50%] border-red-400 border-8 {propClass}"
-/> -->
-
 <svg
     class="circle absolute"
     xmlns:xlink="http://www.w3.org/1999/xlink"

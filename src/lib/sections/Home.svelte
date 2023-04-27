@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import LineEnd from "../lineEnd.svelte";
+    import LineEnd from "../LineEnd.svelte";
     import { inView, animate } from "motion";
 
     let nameElement;
@@ -27,13 +27,10 @@
     });
 </script>
 
-<div
-    class="home flex text-center items-center justify-center h-[100svh] relative p-16 mb-[calc(70svh+24px)]"
+<section
+    class="home flex text-center items-center justify-center h-[100svh] mb-[calc(70svh+24px)]"
 >
-    <h1
-        bind:this={nameElement}
-        class="text-9xl text-gray-500 animate-fade-slow"
-    >
+    <h1 bind:this={nameElement} class="text-9xl animate-fade-slow">
         Daniel Zhang
     </h1>
     <LineEnd
@@ -45,7 +42,7 @@
         style="--animation-height: 100svh"
         class="line animate-[drawLine_3s_cubic-bezier(0.2,0,0.8,1)_forwards_5s] top-[calc(70%+24px)]"
     />
-</div>
+</section>
 
 <style lang="scss">
     :global(.home .circle .path) {
