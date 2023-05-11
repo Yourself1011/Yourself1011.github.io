@@ -39,7 +39,7 @@
         class="animate-[svgDraw_7s_ease-in-out_forwards_3s]"
     />
     <div
-        style="--animation-height: 100svh"
+        style="--animation-height: calc(100svh + 8px)"
         class="line animate-[drawLine_3s_cubic-bezier(0.2,0,0.8,1)_forwards_5s] top-[calc(70%+24px)]"
     />
 </section>

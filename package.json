@@ -23,6 +23,7 @@
     "vite": "^4.3.0"
   },
   "dependencies": {
-    "motion": "^10.15.5"
+    "motion": "^10.15.5",
+    "svelte-routing": "^1.8.8"
   }
 }
