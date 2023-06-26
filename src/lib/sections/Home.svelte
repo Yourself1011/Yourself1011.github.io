@@ -33,7 +33,7 @@
     <div bind:this={container}>
         <h1
             bind:this={nameElement}
-            class="text-[min(8rem,15svh)] animate-fade-slow leading-none"
+            class="text-[min(8rem,15svh)] animate-fade-slow leading-tight tracking-tight"
         >
             Daniel Zhang
         </h1>

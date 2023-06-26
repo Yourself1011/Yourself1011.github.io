@@ -11,9 +11,12 @@
         color="#8eb851"
         line={true}
     >
-        Build the <b>UI</b> for an <b>AI</b>-powered automated testing system
-        using <b>React</b>, <b>MUI</b>, and <b>Typescript</b>, in a <b>SCRUM</b>
-        environment.
+        <p>
+            Build the <b>UI</b> for an <b>AI</b>-powered automated testing
+            system using <b>React</b>, <b>MUI</b>, and <b>Typescript</b>, in a
+            <b>SCRUM</b>
+            environment.
+        </p>
     </Card>
 </CardSection>
 

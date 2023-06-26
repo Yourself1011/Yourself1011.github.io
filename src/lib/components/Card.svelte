@@ -22,9 +22,9 @@
             style:background-color="rgba(0, 0, 0, 0.5)"
             style:background-blend-mode="darken"
         >
-            <h3 class="text-white">{title}</h3>
+            <h3 class="text-white leading-[4px]">{title}</h3>
             {#if subtitle}
-                <h4 class="text-white">{subtitle}</h4>
+                <h4 class="text-gray-300">{subtitle}</h4>
             {/if}
         </div>
         <div class="p-4">
