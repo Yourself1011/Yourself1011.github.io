@@ -10,16 +10,41 @@
     color: rgb(107, 114, 128);
 }
 
-.line {
+@mixin line {
     width: 0;
     height: 0;
     border-right: 8px solid rgb(248, 113, 113);
     position: absolute;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+}
+
+.line {
+    @include line;
+}
+
+.lineHorizontal {
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid rgb(248, 113, 113);
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
 }
 
 section {
-    padding: 10%;
+    padding: 10svh 10svw;
     position: relative;
+}
+
+h2 {
+    font-family: Inter;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+h3 {
+    font-family: Inter;
+    font-size: 2.25rem;
+    line-height: 0.8;
 }

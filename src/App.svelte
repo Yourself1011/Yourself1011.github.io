@@ -6,12 +6,12 @@
 </script>
 
 <Router>
-    <Navbar />
-    <main>
-        <Route path="/">
+    <Route path="/">
+        <main>
             <Home />
-        </Route>
-    </main>
+        </main>
+        <Navbar />
+    </Route>
 </Router>
 
 <style></style>

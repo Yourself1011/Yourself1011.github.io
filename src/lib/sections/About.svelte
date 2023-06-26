@@ -34,7 +34,7 @@
     <div
         class="md:flex-1 animate-fly left -translate-x-full opacity-0 md:text-right"
     >
-        <h2 class="text-5xl mb-4 md:mb-8">About me</h2>
+        <h2 class="mb-4 md:mb-8">About me</h2>
         <p>
             Hi, I'm Daniel, a full-stack software engineer who is always looking
             to learn and try new things. Apart from programming, I enjoy playing
